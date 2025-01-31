@@ -14,7 +14,7 @@ import java.time.OffsetDateTime
 interface MetaFieldDecorator {
 
     /** [MetaField] to use as a global cursor, if applicable. */
-    val globalCursor: MetaField?
+    val globalCursor: FieldOrMetaField?
 
     /**
      * All [MetaField]s to be found in [Global] stream records.
@@ -23,7 +23,7 @@ interface MetaFieldDecorator {
      *
      * Empty set when not applicable.
      */
-    val globalMetaFields: Set<MetaField>
+    val globalMetaFields: Set<FieldOrMetaField>
 
     /** Convenience function for [AirbyteStreamFactory]. */
     fun decorateAirbyteStream(airbyteStream: AirbyteStream) {
